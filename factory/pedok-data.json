@@ -1,0 +1,9 @@
+{
+	"name": "pedok-data",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "fc917b26-9c4c-441e-a60b-fde2d86fe04a",
+		"tenantId": "b089a557-1e06-49de-aec7-ed20316b726a"
+	}
+}
