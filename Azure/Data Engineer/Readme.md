@@ -1,2 +1,6 @@
 Project01 - From https://docs.microsoft.com/en-us/learn/modules/survey-components-of-azure-synapse-analytics/3-exercise-create-manage-workspace
   - Exercise - Create and manage Azure Synapse Analytics workspace
+  - This is a simple exercise to create a Synapse analytics workspace via Azure Portal.
+  - I configured the worksapce to sync with this repository, as a result it created 3 folders in Project01. 
+  - I also created a blank pipeline. 
+  - As a last I deleted the blank pipeline before deleting the resource group for this workspace. 
