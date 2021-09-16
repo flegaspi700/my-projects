@@ -5,5 +5,5 @@
   - I also created a blank pipeline. 
   - As a last step, I deleted the blank pipeline before deleting the resource group for this workspace. 
 - Project02 - From https://docs.microsoft.com/en-us/learn/modules/populate-slowly-changing-dimensions-azure-synapse-analytics-pipelines/4-exercise-design-implement-type-1-dimension
-  - Exercise - Create a Data flow for a Type 1 SCD using Azure Synapse dedicated SQL pool as the source and destination
-  - This exercie includes creating a SQL script and creating mapping flows
+  - Exercise - Create a Data flow for a Type 1 SCD using Azure Synapse dedicated SQL pool as the source and destination.
+  - This exercie includes creating a SQL script and creating mapping flows.
