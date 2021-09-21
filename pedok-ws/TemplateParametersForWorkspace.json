@@ -8,6 +8,9 @@
 		"pedok-ws-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
 		},
+		"nyc_tlc_yellow_sasUri": {
+			"value": ""
+		},
 		"pedok-ws-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://pedokaccount.dfs.core.windows.net"
 		}
