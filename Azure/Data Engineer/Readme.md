@@ -7,4 +7,5 @@
 - Project02 - From https://docs.microsoft.com/en-us/learn/modules/populate-slowly-changing-dimensions-azure-synapse-analytics-pipelines/4-exercise-design-implement-type-1-dimension
   - Exercise - Create a Data flow for a Type 1 SCD using Azure Synapse dedicated SQL pool as the source and destination.
   - This exercie includes creating a SQL script and creating mapping flows.
-- Project03 - From
+- Project03 - From https://docs.microsoft.com/en-us/azure/synapse-analytics/get-started-create-workspace
+  - Uploaded sample dataset from downloaded file and gallery.
