@@ -2,7 +2,7 @@
 	"name": "sqldemo",
 	"properties": {
 		"content": {
-			"query": "SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://pedok.dfs.core.windows.net/data/NYCTripSmall.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]",
+			"query": "SELECT\n    TOP 100 *\nFROM\n    OPENROWSET(\n        BULK 'https://pedok.dfs.core.windows.net/data/NYCTripSmall.parquet',\n        FORMAT='PARQUET'\n    ) AS [result]\n\n\nCREATE EXTERNAL DATA SOURCE pedok\nWITH ( LOCATION = 'https://pedok.dfs.core.windows.net')",
 			"metadata": {
 				"language": "sql"
 			},
