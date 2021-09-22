@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "SELECT TOP (100) [DateID]\n,[MedallionID]\n,[HackneyLicenseID]\n,[PickupTimeID]\n,[DropoffTimeID]\n,[PickupGeographyID]\n,[DropoffGeographyID]\n,[PickupLatitude]\n,[PickupLongitude]\n,[PickupLatLong]\n,[DropoffLatitude]\n,[DropoffLongitude]\n,[DropoffLatLong]\n,[PassengerCount]\n,[TripDurationSeconds]\n,[TripDistanceMiles]\n,[PaymentType]\n,[FareAmount]\n,[SurchargeAmount]\n,[TaxAmount]\n,[TipAmount]\n,[TollsAmount]\n,[TotalAmount]\n FROM [dbo].[NYCTaxiTripSmall]\n\nSELECT PassengerCount,\n      SUM(TripDistanceMiles) as SumTripDistance,\n      AVG(TripDistanceMiles) as AvgTripDistance\nFROM  dbo.NYCTaxiTripSmall\nWHERE TripDistanceMiles > 0 AND PassengerCount > 0\nGROUP BY PassengerCount\nORDER BY PassengerCount;",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqlpoolpedok",
+				"poolName": "sqlpoolpedok"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
