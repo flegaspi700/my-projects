@@ -10,4 +10,4 @@
 - Project03 - From https://docs.microsoft.com/en-us/azure/synapse-analytics/get-started-create-workspace
   - Uploaded sample dataset from downloaded file and gallery.
 - Project04 - From https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-monitor
-  - Failed to Visualize in Synapse PowerBi. 
+  - Failed to Visualize in Synapse PowerBi. Need PowerBI Pro or Premium.
