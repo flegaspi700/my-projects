@@ -11,4 +11,6 @@
   - Uploaded sample dataset from downloaded file and gallery.
 - Project04 - From https://docs.microsoft.com/en-gb/azure/synapse-analytics/get-started-monitor
   - Failed to Visualize in Synapse PowerBi. Need PowerBI Pro or Premium.
-- Project05 - From https://docs.microsoft.com/en-us/learn/modules/design-multidimensional-schema-to-optimize-analytical-workloads/
+- Project05 - From https://docs.microsoft.com/en-us/learn/paths/data-engineer-azure-databricks/
+  - https://github.com/flegaspi700/demoDatabricks
+  - Tested Azure Databricks
