@@ -14,3 +14,5 @@
 - Project05 - From https://docs.microsoft.com/en-us/learn/paths/data-engineer-azure-databricks/
   - https://github.com/flegaspi700/demoDatabricks
   - Tested Azure Databricks
+- Project06 - From https://www.coursera.org/learn/azure-sql-pool-polybase/home/welcome 
+  - Created simple Polybase
