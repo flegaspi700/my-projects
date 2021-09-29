@@ -9,7 +9,7 @@
 			"value": ""
 		},
 		"pedok-workspace-WorkspaceDefaultStorage_properties_typeProperties_url": {
-			"value": "https://pedok.dfs.core.windows.net"
+			"value": "https://pedokstorage2.dfs.core.windows.net"
 		}
 	}
 }
