@@ -2,7 +2,7 @@
 	"name": "SQL script 1",
 	"properties": {
 		"content": {
-			"query": "--create master KEY\n\ncreate database scoped credential PolyPedokDemo\nwith\nIdentity = 'SecretIdentity',\nsecret = ''\n\ncreate external data source PolyPedokSource\nWITH\n(\n    type = HADOOP,\n    location = 'wasbs://pedok-blob@pedokstorage.blob.core.windows.net/',\n    CREDENTIAL = \n)",
+			"query": "--create master KEY\n\n--create database scoped credential PolyPedokDemo\n--with\n--Identity = 'SecretIdentity',\n--secret = ''\n\ncreate external data source PolyPedokSource\nWITH\n(\n    type = HADOOP,\n    location = 'wasbs://pedok-blob@pedokstorage.blob.core.windows.net/',\n    CREDENTIAL = PolyPedokDemo\n)\n\ncreate external file format PolyPedokFormat\nWITH\n(\n    FORMAT_TYPE = DELIMITEDTEXT,\n    FORMAT_OPTIONS (\n        FIELD_TERMINATOR = ',',\n        FIRST_ROW=2\n    )\n)\n\ncreate EXTERNAL TABLE dbo.grades\n(\n    name VARCHAR(100),\n    hours int,\n    grade int\n)\nWITH\n(\n    LOCATION = '/',\n    DATA_SOURCE = PolyPedokSource,\n    FILE_FORMAT = PolyPedokFormat\n)",
 			"metadata": {
 				"language": "sql"
 			},
