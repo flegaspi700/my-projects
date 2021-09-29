@@ -111,7 +111,7 @@
 			"apiVersion": "2019-06-01-preview",
 			"properties": {
 				"content": {
-					"query": "--create master KEY\n\ncreate database scoped credential PolyPedokDemo\nwith\nIdentity = 'SecretIdentity',\nsecret = 'HiMmoZc0D+NRdHekA2cw/TUiiJELn3a2XHoLvsJJrUblpoEbjOoxqGtESJaELj5JhlXIdQvM2pU2VmNZd1LHHA=='\n\n",
+					"query": "--create master KEY\n\ncreate database scoped credential PolyPedokDemo\nwith\nIdentity = 'SecretIdentity',\nsecret = ''\n\ncreate external data source PolyPedokSource\nWITH\n(\n    type = HADOOP,\n    location = 'wasbs://pedok-blob@pedokstorage.blob.core.windows.net/',\n    CREDENTIAL = \n)",
 					"metadata": {
 						"language": "sql"
 					},
