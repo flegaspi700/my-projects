@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 1",
+	"properties": {
+		"content": {
+			"query": "--create master KEY\n\ncreate database scoped credential PolyPedokDemo\nwith\nIdentity = 'SecretIdentity',\nsecret = 'HiMmoZc0D+NRdHekA2cw/TUiiJELn3a2XHoLvsJJrUblpoEbjOoxqGtESJaELj5JhlXIdQvM2pU2VmNZd1LHHA=='\n\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "PedokPool01",
+				"poolName": "PedokPool01"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
