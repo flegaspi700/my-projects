@@ -15,4 +15,9 @@
   - https://github.com/flegaspi700/demoDatabricks
   - Tested Azure Databricks
 - Project06 - From https://www.coursera.org/learn/azure-sql-pool-polybase/home/welcome 
-  - Created simple Polybase
+  - Implement simple Polybase
+  - Create Azure Data Lake Storage Gen2
+  - Create Source File and upload it on ADLS container
+  - Create Azure SQL Pool and Synapse Workspace
+  - Configure Polybase
+  - Polybase in Action
