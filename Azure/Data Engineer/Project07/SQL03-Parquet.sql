@@ -1,4 +1,5 @@
--- Lab - SQL Pool - External Tables - CSV
+
+-- Lab - SQL Pool - External tables - Parquet
 
 CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
 
@@ -7,7 +8,7 @@ CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
 CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential
 WITH
   IDENTITY = '<ExternalStorage>',
-  SECRET = '<AccessKey>';
+  SECRET = '<AccessKeys>';
 
 -- In the SQL pool, we can use Hadoop drivers to mention the source
 
@@ -17,14 +18,19 @@ WITH (    LOCATION   = 'abfss://<container>@<externalstorage>.dfs.core.windows.n
           TYPE = HADOOP
 )
 
-CREATE EXTERNAL FILE FORMAT TextFileFormat WITH (  
-      FORMAT_TYPE = DELIMITEDTEXT,  
-    FORMAT_OPTIONS (  
-        FIELD_TERMINATOR = ',',
-        FIRST_ROW = 2))
-
--- If you made a mistake with the table, you can drop the table and recreate it again
+-- Drop the table if it already exists
 DROP EXTERNAL TABLE [logdata]
+
+-- Here we are mentioning the file format as Parquet
+
+CREATE EXTERNAL FILE FORMAT parquetfile  
+WITH (  
+    FORMAT_TYPE = PARQUET,  
+    DATA_COMPRESSION = 'org.apache.hadoop.io.compress.SnappyCodec'  
+);
+
+-- Notice that the column names don't contain spaces
+-- When Azure Data Factory was used to generate these files, the column names could not have spaces
 
 CREATE EXTERNAL TABLE [logdata]
 (
@@ -41,17 +47,23 @@ CREATE EXTERNAL TABLE [logdata]
 	[Resourcegroup] [varchar](1000) NULL
 )
 WITH (
- LOCATION = '/Log.csv',
+ LOCATION = '/parquet/',
     DATA_SOURCE = log_data,  
-    FILE_FORMAT = TextFileFormat
+    FILE_FORMAT = parquetfile
 )
 
+/*
+A common error can come when trying to select the data, here you can get various errors such as MalformedInput
+
+You need to ensure the column names map correctly and the data types are correct as per the parquet file definition
+
+*/
 
 
-SELECT * FROM logdata
+SELECT * FROM [logdata]
 
 
-SELECT [Operation name] , COUNT([Operation name]) as [Operation Count]
-FROM logdata
-GROUP BY [Operation name]
+SELECT [Operationname] , COUNT([Operationname]) as [Operation Count]
+FROM [logdata]
+GROUP BY [Operationname]
 ORDER BY [Operation Count]
