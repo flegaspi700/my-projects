@@ -1,0 +1,17 @@
+{
+	"name": "DedicatedExternal",
+	"properties": {
+		"content": {
+			"query": "-- Lab - SQL Pool - External Tables - CSV\n\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'bl0s50m#101';\n\n-- Here we are using the Storage account key for authorization\n\nCREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential\nWITH\n  IDENTITY = 'pedokexternalstorage',\n  SECRET = 'JVv9BvCBwnXjjSKqAtD95PXDbNT2e7D+XMRcRrghbcNvZ7oKYXKtygGsahkUD3OqaTEGVMcAWaLXRBSs8Zp/mA==';\n\n-- In the SQL pool, we can use Hadoop drivers to mention the source\n\nCREATE EXTERNAL DATA SOURCE log_data\nWITH (    LOCATION   = 'abfss://data@pedokexternalstorage.dfs.core.windows.net',\n          CREDENTIAL = AzureStorageCredential,\n          TYPE = HADOOP\n)\n\nCREATE EXTERNAL FILE FORMAT TextFileFormat WITH (  \n      FORMAT_TYPE = DELIMITEDTEXT,  \n    FORMAT_OPTIONS (  \n        FIELD_TERMINATOR = ',',\n        FIRST_ROW = 2))\n\n\nCREATE EXTERNAL TABLE [logdata]\n(\n    [Id] [int] NULL,\n\t[Correlationid] [varchar](200) NULL,\n\t[Operationname] [varchar](200) NULL,\n\t[Status] [varchar](100) NULL,\n\t[Eventcategory] [varchar](100) NULL,\n\t[Level] [varchar](100) NULL,\n\t[Time] [datetime] NULL,\n\t[Subscription] [varchar](200) NULL,\n\t[Eventinitiatedby] [varchar](1000) NULL,\n\t[Resourcetype] [varchar](1000) NULL,\n\t[Resourcegroup] [varchar](1000) NULL\n)\nWITH (\n LOCATION = '/Log.csv',\n    DATA_SOURCE = log_data,  \n    FILE_FORMAT = TextFileFormat\n)\n\n\n\nSELECT * FROM logdata\n\n\nSELECT [Operation name] , COUNT([Operation name]) as [Operation Count]\nFROM logdata\nGROUP BY [Operation name]\nORDER BY [Operation Count]",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "SQLpoolDedicated",
+				"poolName": "SQLpoolDedicated"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
