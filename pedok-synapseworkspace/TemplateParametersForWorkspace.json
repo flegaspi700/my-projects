@@ -5,8 +5,14 @@
 		"workspaceName": {
 			"value": "pedok-synapseworkspace"
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"pedok-synapseworkspace-WorkspaceDefaultSqlServer_connectionString": {
 			"value": ""
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://pedokexternalstorage.dfs.core.windows.net"
 		},
 		"pedok-synapseworkspace-WorkspaceDefaultStorage_properties_typeProperties_url": {
 			"value": "https://pedoksynapsestorage.dfs.core.windows.net"
