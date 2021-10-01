@@ -21,3 +21,5 @@
   - Create Azure SQL Pool and Synapse Workspace
   - Configure Polybase
   - Polybase in Action
+- Project07 - from https://www.udemy.com/share/104Rwq3@DfF0OgENK1XDR3NBH7oWuQpxak96fjEUy_fnKRad0kLK2IroqjjiKSeo0Xvn22Xm/
+  - 
