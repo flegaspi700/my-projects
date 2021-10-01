@@ -1,0 +1,135 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"workspaceName": {
+			"type": "string",
+			"metadata": "Workspace name",
+			"defaultValue": "pedok-synapseworkspace"
+		},
+		"pedok-synapseworkspace-WorkspaceDefaultSqlServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'pedok-synapseworkspace-WorkspaceDefaultSqlServer'"
+		},
+		"pedok-synapseworkspace-WorkspaceDefaultStorage_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://pedoksynapsestorage.dfs.core.windows.net"
+		}
+	},
+	"variables": {
+		"workspaceId": "[concat('Microsoft.Synapse/workspaces/', parameters('workspaceName'))]"
+	},
+	"resources": [
+		{
+			"name": "[concat(parameters('workspaceName'), '/pedok-synapseworkspace-WorkspaceDefaultSqlServer')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"parameters": {
+					"DBName": {
+						"type": "String"
+					}
+				},
+				"annotations": [],
+				"type": "AzureSqlDW",
+				"typeProperties": {
+					"connectionString": "[parameters('pedok-synapseworkspace-WorkspaceDefaultSqlServer_connectionString')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/pedok-synapseworkspace-WorkspaceDefaultStorage')]",
+			"type": "Microsoft.Synapse/workspaces/linkedServices",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": [],
+				"type": "AzureBlobFS",
+				"typeProperties": {
+					"url": "[parameters('pedok-synapseworkspace-WorkspaceDefaultStorage_properties_typeProperties_url')]"
+				},
+				"connectVia": {
+					"referenceName": "AutoResolveIntegrationRuntime",
+					"type": "IntegrationRuntimeReference"
+				}
+			},
+			"dependsOn": [
+				"[concat(variables('workspaceId'), '/integrationRuntimes/AutoResolveIntegrationRuntime')]"
+			]
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/AutoResolveIntegrationRuntime')]",
+			"type": "Microsoft.Synapse/workspaces/integrationRuntimes",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"type": "Managed",
+				"typeProperties": {
+					"computeProperties": {
+						"location": "AutoResolve",
+						"dataFlowProperties": {
+							"computeType": "General",
+							"coreCount": 8,
+							"timeToLive": 0
+						}
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/ExternalSQL')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "-- Lab - Using External tables\n\n-- First we need to create a database in the serverless pool\nCREATE DATABASE [appdb]\n\n-- Here we are creating a database master key. This key will be used to protect the Shared Access Signature which is specified in the next step\n-- Ensure to switch the context to the new database first\n\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';\n\n-- Here we are using the Shared Access Signature to authorize the use of the Azure Data Lake Storage account\n\nCREATE DATABASE SCOPED CREDENTIAL SasToken\nWITH IDENTITY='SHARED ACCESS SIGNATURE'\n, SECRET = '<SasToken>';\n\n-- This defines the source of the data. \n\nCREATE EXTERNAL DATA SOURCE log_data\nWITH (    LOCATION   = 'https://<externalstoragename>.blob.core.windows.net/<container>',\n          CREDENTIAL = SasToken\n)\n\n/* This creates an External File Format object that defines the external data that can be \npresent in Hadoop, Azure Blob storage or Azure Data Lake Store\n\nHere with FIRST_ROW, we are saying please skip the first row because this contains header information\n*/\n\nCREATE EXTERNAL FILE FORMAT TextFileFormat WITH (  \n      FORMAT_TYPE = DELIMITEDTEXT,  \n    FORMAT_OPTIONS (  \n        FIELD_TERMINATOR = ',',\n        FIRST_ROW = 2))\n\n-- If you made a mistake with the table, you can drop the table and recreate it again\nDROP EXTERNAL TABLE [logdata]\n\n-- Here we define the external table\n\nCREATE EXTERNAL TABLE [logdata]\n(\n    [Id] [int],\n\t[Correlationid] [varchar](200),\n\t[Operationname] [varchar](200),\n\t[Status] [varchar](100),\n\t[Eventcategory] [varchar](100),\n\t[Level] [varchar](100),\n\t[Time] [datetime],\n\t[Subscription] [varchar](200),\n\t[Eventinitiatedby] [varchar](1000),\n\t[Resourcetype] [varchar](1000),\n\t[Resourcegroup] [varchar](1000))\nWITH (\n LOCATION = '/Log.csv',\n    DATA_SOURCE = log_data,  \n    FILE_FORMAT = TextFileFormat\n)\n\n/*\nCommon errors\n\n1. External table 'logdata' is not accessible because location does not exist or it is used by another process. \nHere your Shared Access Siganture is an issue. Ensure to create the right Shared Access Siganture\n\n2. Msg 16544, Level 16, State 3, Line 34\nThe maximum reject threshold is reached.\nThis happens when you try to select the rows of data from the table. This can happen if the rows are not matching the schema defined for the table\n\n3. NULL is not allowed for external table columns.\n\n*/\n\nSELECT * FROM [logdata]\n\n\nSELECT [Operation name] , COUNT([Operation name]) as [Operation Count]\nFROM [logdata]\nGROUP BY [Operation name]\nORDER BY [Operation Count]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "appdb",
+						"poolName": "Built-in"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/SQLpoolDedicated')]",
+			"type": "Microsoft.Synapse/workspaces/sqlPools",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('workspaceName'), '/DedicatedExternal')]",
+			"type": "Microsoft.Synapse/workspaces/sqlscripts",
+			"apiVersion": "2019-06-01-preview",
+			"properties": {
+				"content": {
+					"query": "-- Lab - SQL Pool - External Tables - CSV\n\nCREATE MASTER KEY ENCRYPTION BY PASSWORD = 'bl0s50m#101';\n\n-- Here we are using the Storage account key for authorization\n\nCREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential\nWITH\n  IDENTITY = 'pedokexternalstorage',\n  SECRET = 'JVv9BvCBwnXjjSKqAtD95PXDbNT2e7D+XMRcRrghbcNvZ7oKYXKtygGsahkUD3OqaTEGVMcAWaLXRBSs8Zp/mA==';\n\n-- In the SQL pool, we can use Hadoop drivers to mention the source\n\nCREATE EXTERNAL DATA SOURCE log_data\nWITH (    LOCATION   = 'abfss://data@pedokexternalstorage.dfs.core.windows.net',\n          CREDENTIAL = AzureStorageCredential,\n          TYPE = HADOOP\n)\n\nCREATE EXTERNAL FILE FORMAT TextFileFormat WITH (  \n      FORMAT_TYPE = DELIMITEDTEXT,  \n    FORMAT_OPTIONS (  \n        FIELD_TERMINATOR = ',',\n        FIRST_ROW = 2))\n\n\nCREATE EXTERNAL TABLE [logdata]\n(\n    [Id] [int] NULL,\n\t[Correlationid] [varchar](200) NULL,\n\t[Operationname] [varchar](200) NULL,\n\t[Status] [varchar](100) NULL,\n\t[Eventcategory] [varchar](100) NULL,\n\t[Level] [varchar](100) NULL,\n\t[Time] [datetime] NULL,\n\t[Subscription] [varchar](200) NULL,\n\t[Eventinitiatedby] [varchar](1000) NULL,\n\t[Resourcetype] [varchar](1000) NULL,\n\t[Resourcegroup] [varchar](1000) NULL\n)\nWITH (\n LOCATION = '/Log.csv',\n    DATA_SOURCE = log_data,  \n    FILE_FORMAT = TextFileFormat\n)\n\n\n\nSELECT * FROM logdata\n\n\nSELECT [Operation name] , COUNT([Operation name]) as [Operation Count]\nFROM logdata\nGROUP BY [Operation name]\nORDER BY [Operation Count]",
+					"metadata": {
+						"language": "sql"
+					},
+					"currentConnection": {
+						"databaseName": "SQLpoolDedicated",
+						"poolName": "SQLpoolDedicated"
+					},
+					"resultLimit": 5000
+				},
+				"type": "SqlQuery"
+			},
+			"dependsOn": []
+		}
+	]
+}
