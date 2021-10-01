@@ -1,18 +1,18 @@
 -- Lab - SQL Pool - External Tables - CSV
 
-CREATE MASTER KEY ENCRYPTION BY PASSWORD = '';
+CREATE MASTER KEY ENCRYPTION BY PASSWORD = '<password>';
 
 -- Here we are using the Storage account key for authorization
 
 CREATE DATABASE SCOPED CREDENTIAL AzureStorageCredential
 WITH
-  IDENTITY = 'appdatalake7000',
-  SECRET = '';
+  IDENTITY = '<ExternalStorage>',
+  SECRET = '<AccessKey>';
 
 -- In the SQL pool, we can use Hadoop drivers to mention the source
 
 CREATE EXTERNAL DATA SOURCE log_data
-WITH (    LOCATION   = 'abfss://data@appdatalake7000.dfs.core.windows.net',
+WITH (    LOCATION   = 'abfss://<container>@<externalstorage>.dfs.core.windows.net',
           CREDENTIAL = AzureStorageCredential,
           TYPE = HADOOP
 )
