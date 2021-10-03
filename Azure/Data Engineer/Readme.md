@@ -23,4 +23,5 @@
   - Polybase in Action
 - Project07 - from https://www.udemy.com/share/104Rwq3@DfF0OgENK1XDR3NBH7oWuQpxak96fjEUy_fnKRad0kLK2IroqjjiKSeo0Xvn22Xm/
   - Created Serverless and Dedicated SQL
-  - Tested COPY Activity via Polybase and BULK
+  - Tested COPY Activity via Polybase and BULK load
+  - Created SQL tables
