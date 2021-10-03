@@ -6,7 +6,7 @@ SELECT TOP 100
     jsonContent
 FROM
     OPENROWSET(
-        BULK 'https://appdatalake7000.dfs.core.windows.net/data/log.json',
+        BULK 'https://<storagename>.dfs.core.windows.net/<container/path>',
         FORMAT = 'CSV',
         FIELDQUOTE = '0x0b',
         FIELDTERMINATOR ='0x0b',
@@ -36,7 +36,7 @@ SELECT
    JSON_VALUE(jsonContent,'$.Resourcegroup') AS Resourcegroup
 FROM
     OPENROWSET(
-        BULK 'https://appdatalake7000.dfs.core.windows.net/data/log.json',
+        BULK 'https://<storagename>.dfs.core.windows.net/<container/path>',
         FORMAT = 'CSV',
         FIELDQUOTE = '0x0b',
         FIELDTERMINATOR ='0x0b',
