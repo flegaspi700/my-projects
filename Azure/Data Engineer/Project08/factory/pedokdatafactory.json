@@ -1,0 +1,9 @@
+{
+	"name": "pedokdatafactory",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "77bb43e8-10fb-452e-bfa0-99098df81617",
+		"tenantId": "b089a557-1e06-49de-aec7-ed20316b726a"
+	}
+}
