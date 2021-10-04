@@ -25,3 +25,5 @@
   - Created Serverless and Dedicated SQL
   - Tested COPY Activity via Polybase and BULK load
   - Created SQL tables
+- Project08 - from https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal
+  - Created Data Factory Pipeline to copy csv file within same storage
