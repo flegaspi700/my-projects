@@ -27,3 +27,4 @@
   - Created SQL tables
 - Project08 - from https://docs.microsoft.com/en-us/azure/data-factory/quickstart-create-data-factory-portal
   - Created simple copy activity - Data Factory Pipeline to copy csv file within same storage
+  - Test
