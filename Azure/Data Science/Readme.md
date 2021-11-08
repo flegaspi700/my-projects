@@ -1,2 +1,2 @@
-- Project01 - Analyze Text Data - From https://github.com/flegaspi700/Data-Science-For-Beginners/blob/main/1-Introduction/01-defining-data-science/README.md
+- 001 - Analyze Text Data - From https://github.com/flegaspi700/Data-Science-For-Beginners/blob/main/1-Introduction/01-defining-data-science/README.md
      - Modules used - WordCloud, NLP_rake, HTML.Parser, Requests
