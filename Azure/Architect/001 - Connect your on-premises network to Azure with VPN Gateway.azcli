@@ -1,0 +1,7 @@
+#create virtual network and subnet
+az network vnet create \
+    --resource-group $resourceGroupName \
+    --name $vnetName \
+    --address-prefixes \
+    --subnet-name $subnetName \
+    --subnet-prefixes $subnetPrefix \
