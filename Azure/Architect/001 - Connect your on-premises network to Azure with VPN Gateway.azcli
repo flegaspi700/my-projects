@@ -18,7 +18,7 @@ az network vnet subnet create \
 #create the LNG-HQ-Network local network gateway
 az network local-gateway create \
     --resource-group [sandbox resource group name] \
-    --gateway-ip-address 94.0.252.160 \
+    --gateway-ip-address \
     --name LNG-HQ-Network \
     --local-address-prefixes 172.16.0.0/16
 
@@ -42,7 +42,7 @@ az network vnet subnet create \
 #create the LNG-Azure-VNet-1 local network gateway
 az network local-gateway create \
     --resource-group [sandbox resource group name] \
-    --gateway-ip-address 94.0.252.160 \
+    --gateway-ip-address \
     --name LNG-Azure-VNet-1 \
     --local-address-prefixes 172.16.255.0/27
 
