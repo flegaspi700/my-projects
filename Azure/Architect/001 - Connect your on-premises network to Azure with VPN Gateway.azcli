@@ -5,3 +5,9 @@ az network vnet create \
     --address-prefixes \
     --subnet-name $subnetName \
     --subnet-prefixes $subnetPrefix \
+
+#create resource group for storage account
+az group create \
+    --name $resourceGroupName \
+    --location $location
+
