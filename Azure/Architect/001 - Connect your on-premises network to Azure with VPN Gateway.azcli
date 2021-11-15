@@ -1,13 +1,56 @@
-#create virtual network and subnet
+
+###Create the Azure-side resources
+#create the Azure-VNet-1 virtual network and the Services subnet
 az network vnet create \
-    --resource-group $resourceGroupName \
-    --name $vnetName \
-    --address-prefixes \
-    --subnet-name $subnetName \
-    --subnet-prefixes $subnetPrefix \
+    --resource-group [sandbox resource group name] \
+    --name Azure-VNet-1 \
+    --address-prefixes 10.0.0.0/16 \
+    --subnet-name Services \
+    --subnet-prefixes 10.0.0.0/24
 
-#create resource group for storage account
-az group create \
-    --name $resourceGroupName \
-    --location $location
+#add the GatewaySubnet subnet to Azure-VNet-1
+az network vnet subnet create \
+    --resource-group [sandbox resource group name] \
+    --vnet-name Azure-VNet-1 \
+    --address-prefixes 10.0.255.0/27 \
+    --name GatewaySubnet
 
+#create the LNG-HQ-Network local network gateway
+az network local-gateway create \
+    --resource-group [sandbox resource group name] \
+    --gateway-ip-address 94.0.252.160 \
+    --name LNG-HQ-Network \
+    --local-address-prefixes 172.16.0.0/16
+
+
+###Create the simulated on-premises network and supporting resources
+#create the HQ-Network virtual network and the Applications subnet
+az network vnet create \
+    --resource-group [sandbox resource group name] \
+    --name HQ-Network \
+    --address-prefixes 172.16.0.0/16 \
+    --subnet-name Applications \
+    --subnet-prefixes 172.16.0.0/24
+
+#add GatewaySubnet to HQ-Network
+az network vnet subnet create \
+    --resource-group [sandbox resource group name] \
+    --address-prefixes 172.16.255.0/27 \
+    --name GatewaySubnet \
+    --vnet-name HQ-Network
+
+#create the LNG-Azure-VNet-1 local network gateway
+az network local-gateway create \
+    --resource-group [sandbox resource group name] \
+    --gateway-ip-address 94.0.252.160 \
+    --name LNG-Azure-VNet-1 \
+    --local-address-prefixes 172.16.255.0/27
+
+##Verify the topology
+#list the virtual networks
+az network vnet list --output table
+
+#verify that the local network gateways have been successfully created
+az network local-gateway list \
+    --resource-group [sandbox resource group name] \
+    --output table
