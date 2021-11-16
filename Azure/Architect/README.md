@@ -5,11 +5,10 @@
     4.2 Download and install SQL Management Studio - Link to download SQL Management Studio: https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15
     4.3 Install Visual Studio Community - Link to download Visual Studio Community: https://www.visualstudio.com/en-us/downloads/community-vs.aspx
 
-
-AZ-304: Design Monitoring and Alerting
 []: # Language: markdown
 []: # Path: Azure\Architect\README.md
 
+##AZ-304: Design Monitoring and Alerting
 1. Azure Monitor -
     - Azure monitor is a cloud-based service that provides visibility into the performance, availability, and security of your Azure resources.
     - Azure monitor provides you with a dashboard that shows you the status of your resources, and alerts you when something unexpected happens.
@@ -84,8 +83,59 @@ AZ-304: Design Monitoring and Alerting
     - Select the SQL resource, and under the Monitoring section, select Diagnostics settings.
     - Select the logs that you want to send to Log analytics.
 
-1. Learn Application Insights
-2. Learn Azure Sentinel -
+7. Pricing Calculator
+    - Data coming in to Azre is free.
+8. Cost Analysis
+    - Cost Analysis is a free service that helps you understand how much you are spending on Azure.
+    - Breakdown of costs. 
+9. Optimizing Cost
+    - Check for under utilize resources. 
+    - Monitor Metrics.
+    - Azure Advisor. 
+    - Setup budget and cost alerts. 
+10. Reserved Instances
+    - Reserved Instances are a way to purchase compute resources for a period of time.
+    - 1 year and 3 years. up to 72% discount.
+    - Search for - Reservations. 
+11. Resource Tagging.
+    - Resource tagging is a way to tag resources with a name and description.
+    - Adding Metadata to your resources.
+    - Help with billing. In cost analysis you can filter by tags.
+    - Adding Tags in resource group does not add tags to the resources in the resource group.
+
+12. Learn Application Insights
+    - Enable Application Insights Telemetry in Visual Studio. 
+    - Enable Application Insights when creating web app, or in the Web App settings. 
+        - This will create a new "insights" resource in the resource group.
+        - Like Live Metrics and performance. 
+    - Firstly is the feature of SMART DETECTION.
+        - this is an inbuilt feature that is available in application insights.
+        - based on the telemetry data that is sent on to application insights, it can actually go and detect any sort of potential performance problems and failure anomalies in the Web application.
+        - And it uses machine learning to look at the data and then send the alerts based on these different conditions.
+    - And the other feature is known as Continous Export.
+        - all of the data that is collected by application insights can actually be exported on a continuous basis onto an Azure storage account
+    - Application Insight resource - Investigate section - Smart detection
+    - Application Insight resource - Configure - Continuous Export
+      - Data types to export - Storage Subscription - Storage location - Storage container 
+
+13. Learn Azure Sentinel -
+    - cloud service that provides a solution for that security information, event management, and alerting and so that security orchestration, automated response.
+    - this provides a solution that helps in the following, so it helps in the collection of data. 
+    - You can go out and collect data across your users, your devices, your applications and your infrastructure.
+    - Azue Security Center, Azure Security Center helps you to basically look at the visibility and the Analytics phases of the cyber security cycle.
+     - Whereas if you look at Azure Sentinel, this gives you the ability to look at all the pieces in the cyber     security cycle.
+    - Azure Sentinel is a cloud service that provides a solution for that security information, event management, and alerting and so that security orchestration, automated response.
+    - Security cycle: Visibility, Analytics, Hunting, Incidents, and Automation. 
+    - once you have gone ahead and Aníbal, as your sentinel on a workspace, you can't move the workspace onto another resource group or onto another subscription.For that, you have to go out and contact the as your central support team
+
+    - Create Log Analytics workspace
+    - Create Azure Sentinal and select created workspace. 
+    - Collect Data - Data connectors - Like AWS or Azure AD
+        - Select the data you want to send to Log Analytics
+        - Workbooks - are templates to visualize the data in the Log Analytics workspace.
+            - Once you created the workbook, it will become a resource in the resource group..
+    
+   The infrastructure could
    2.1 SIEM - Link to learn Azure Sentinel: https://docs.microsoft.com/en-us/azure/security-insights/security-insights-overview
    2.2 SOAR - Security Orchestration automated response - Link to learn SOAR: https://docs.microsoft.com/en-us/azure/security-insights/security-insights-overview
 
