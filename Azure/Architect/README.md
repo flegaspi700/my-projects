@@ -68,7 +68,16 @@ AZ-304: Design Monitoring and Alerting
         - in Traffic Analytics section.
             - You can visualize the traffic analysis in the Log Analytics workspace.
             - including malicious traffic, blocked traffic, total traffic, and frequent conversation. 
-    - 
+
+4. Service Map
+    - Service Map is a service that enables you to work with the data stored in your Log Analytics workspace.
+    - In the Log Analytics workspace, select Worspace Summary, click Add, and search for the service map.
+    - select the  log analytics workspace, and click create. 
+    - Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" -ResourceGroupName "new-grp" -VMName "demovm" -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" -ExtensionType "DependencyAgentWindows" -TypeHandlerVersion 9.5 -Location NorthEurope
+
+5. Azure SQL Diagnotics
+    - Select the SQL resource, and under the Monitoring section, select Diagnostics settings.
+    - Select the logs that you want to send to Log analytics.
 
 1. Learn Application Insights
 2. Learn Azure Sentinel -
