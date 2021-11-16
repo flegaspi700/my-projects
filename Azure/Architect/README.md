@@ -76,6 +76,11 @@ AZ-304: Design Monitoring and Alerting
     - Set-AzVMExtension -ExtensionName "Microsoft.Azure.Monitoring.DependencyAgent" -ResourceGroupName "new-grp" -VMName "demovm" -Publisher "Microsoft.Azure.Monitoring.DependencyAgent" -ExtensionType "DependencyAgentWindows" -TypeHandlerVersion 9.5 -Location NorthEurope
 
 5. Azure SQL Diagnotics
+    - Go to Azure AD, and under the Monitoring section, select Diagnostics settings.
+    - Select the logs that you want to send to Log analytics.
+    - in order to go ahead and export, the sign in data, your organization needs to have their Azure AD P1 or P2 licenses in place. so you could go ahead and give a setting.
+
+6. Azure AD Sign-ins
     - Select the SQL resource, and under the Monitoring section, select Diagnostics settings.
     - Select the logs that you want to send to Log analytics.
 
