@@ -133,3 +133,12 @@ Console.WriteLine("The temperature is " + celsius + " Celsius.");
 Console.WriteLine(5 / 10);
 //output: 0
 
+//System.Math
+//larger number
+int firstValue = 5;
+int secondValue = 10;
+int largerValue;
+largerValue = Math.Max(firstValue, secondValue);
+Console.WriteLine("The larger value is " + largerValue);
+//output: The larger value is 10
+
