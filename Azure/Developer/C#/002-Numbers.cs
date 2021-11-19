@@ -80,6 +80,56 @@ Console.WriteLine("Modulus of 7 / 5: " + (7 % 5));
 //output: Modulus of 200 / 5 : 0
 //output: Modulus of 7 / 5: 2
 
+//Increment and decrement operators
+int value = 1;
+
+value = value + 1;
+Console.WriteLine("First increment: " + value);
+
+value += 1;
+Console.WriteLine("Second increment: " + value);
+
+value++;
+Console.WriteLine("Third increment: " + value);
+
+value = value - 1;
+Console.WriteLine("First decrement: " + value);
+
+value -= 1;
+Console.WriteLine("Second decrement: " + value);
+
+value--;
+Console.WriteLine("Third decrement: " + value);
+//output: First increment: 2
+//output: Second increment: 3
+//output: Third increment: 4
+//output: First decrement: 3
+//output: Second decrement: 2
+//output: Third decrement: 1
 
 
+int value = 1;
+value++;
+Console.WriteLine("First: " + value);
+Console.WriteLine("Second: " + value++);
+Console.WriteLine("Third: " + value);
+Console.WriteLine("Fourth: " + (++value));
+//output: First: 2
+//output: Second: 2
+//output: Third: 3
+//output: Fourth: 4
+
+//Fahrenheit to Celsius
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32m) * (5m / 9m);
+Console.WriteLine(fahrenheit + " degrees Fahrenheit is " + celsius + " degrees Celsius.");
+//output: 94 degrees Fahrenheit is 34.4 degrees Celsius.
+
+int fahrenheit = 94;
+decimal celsius = (fahrenheit - 32m) * (5m / 9m);
+Console.WriteLine("The temperature is " + celsius + " Celsius.");
+//output: The temperature is 31.4 Celsius.
+
+Console.WriteLine(5 / 10);
+//output: 0
 
