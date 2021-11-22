@@ -1,2 +1,2 @@
-1. C# 
+1. C# - Basics
 2. Pyhton
