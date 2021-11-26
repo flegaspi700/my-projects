@@ -1,0 +1,13 @@
+pandas
+matplotlib
+seaborn
+numpy
+requests
+html.parser
+nlp_rake
+wordcloud
+random
+scipy
+sklearn
+scikit-learn
+plotly
