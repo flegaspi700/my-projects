@@ -11,3 +11,5 @@ scipy
 sklearn
 scikit-learn
 plotly
+pywaffle
+tabulate
