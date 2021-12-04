@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
+        "projectName": "001-DotNetDependencies",
+        "projectPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
+        "packagesPath": "C:\\Users\\cttin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\cttin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Humanizer": {
+              "target": "Package",
+              "version": "[2.7.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\DotNetDependencies.exe
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\DotNetDependencies.deps.json
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\DotNetDependencies.runtimeconfig.json
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\DotNetDependencies.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\ref\DotNetDependencies.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\bin\Debug\net6.0\DotNetDependencies.pdb
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.csproj.AssemblyReference.cache
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.AssemblyInfoInputs.cache
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.AssemblyInfo.cs
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.csproj.CoreCompileInputs.cache
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\ref\DotNetDependencies.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.pdb
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\DotNetDependencies\obj\Debug\net6.0\DotNetDependencies.genruntimeconfig.cache
