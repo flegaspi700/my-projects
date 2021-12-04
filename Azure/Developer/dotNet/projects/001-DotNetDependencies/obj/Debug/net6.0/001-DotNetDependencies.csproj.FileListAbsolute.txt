@@ -57,3 +57,9 @@ C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\p
 C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\zh-Hans\Humanizer.resources.dll
 C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\zh-Hant\Humanizer.resources.dll
 C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\obj\Debug\net6.0\001-DotNetDependencies.csproj.CopyComplete
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\az\Humanizer.resources.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\hy\Humanizer.resources.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\is\Humanizer.resources.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\ko-KR\Humanizer.resources.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\ku\Humanizer.resources.dll
+C:\Users\cttin\OneDrive\Documents\Portfolio\my-projects\Azure\Developer\dotNet\projects\001-DotNetDependencies\bin\Debug\net6.0\th-TH\Humanizer.resources.dll
