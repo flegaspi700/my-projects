@@ -40,7 +40,7 @@
           "dependencies": {
             "Humanizer": {
               "target": "Package",
-              "version": "[2.7.9, )"
+              "version": "[2.13.14, )"
             }
           },
           "imports": [
