@@ -1348,24 +1348,31 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cttin\\.nuget\\packages\\": {}
+    "C:\\Users\\flega\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
+      "projectUniqueName": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
       "projectName": "001-DotNetDependencies",
-      "projectPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
-      "packagesPath": "C:\\Users\\cttin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\obj\\",
+      "projectPath": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\001-DotNetDependencies.csproj",
+      "packagesPath": "C:\\Users\\flega\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\001-DotNetDependencies\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\cttin\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\flega\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
