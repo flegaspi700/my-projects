@@ -1,4 +1,8 @@
 1. dotNet
     - C# - Basics
-    - Projects
-2. Pyhton
+    - projects
+2. Python
+    - Python - Basics
+    - projects
+3. SQL
+    
