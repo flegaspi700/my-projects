@@ -1,2 +1,4 @@
-1. C# - Basics
+1. dotNet
+    - C# - Basics
+    - Projects
 2. Pyhton
