@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/Azure/Developer/dotNet/projects/001-DotNetDependencies/001-DotNetDependencies.csproj",
+                "${workspaceFolder}/Azure/Developer/dotNet/projects/002-DotNetDebugging/002-DotNetDebugging.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/Azure/Developer/dotNet/projects/001-DotNetDependencies/001-DotNetDependencies.csproj",
+                "${workspaceFolder}/Azure/Developer/dotNet/projects/002-DotNetDebugging/002-DotNetDebugging.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,7 +32,7 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/Azure/Developer/dotNet/projects/001-DotNetDependencies/001-DotNetDependencies.csproj",
+                "${workspaceFolder}/Azure/Developer/dotNet/projects/002-DotNetDebugging/002-DotNetDebugging.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
