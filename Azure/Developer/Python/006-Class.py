@@ -15,6 +15,10 @@ class Participant:
         self.choice = ""
 
 class GameRound:
+    def _init_(self):
+        self.participants = []
+        self.round_number = 0
+        self.round_winner = ""
 
 class Game:
     def _init_(self):
