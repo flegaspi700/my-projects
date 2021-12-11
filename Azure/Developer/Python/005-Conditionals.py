@@ -47,3 +47,4 @@ print(calculate_block_size(1))    # Should be 4096
 print(calculate_block_size(4096)) # Should be 4096
 print(calculate_block_size(4097)) # Should be 8192
 print(calculate_block_size(6000)) # Should be 8192
+
