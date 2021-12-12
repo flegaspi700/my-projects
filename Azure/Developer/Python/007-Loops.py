@@ -121,3 +121,14 @@ def factorial(n):
         #5 * 4 * 3 * 2 * 1
 
 print(factorial(5))
+
+#recursion with a while loop
+def factorial2(n):
+    result = 1
+    while n > 1:
+        result = result * n
+        n -= 1
+    return result
+
+print(factorial2(5))
+
