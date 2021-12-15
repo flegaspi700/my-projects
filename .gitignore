@@ -1,6 +1,7 @@
 Azure/.env
 GCP/key.json
 global.json
+Azure/Data Science/.venv
 
 .fake
 .ionide
