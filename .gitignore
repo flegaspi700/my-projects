@@ -5,3 +5,4 @@ Azure/Data Science/.venv
 
 .fake
 .ionide
+.vscode/settings.json
