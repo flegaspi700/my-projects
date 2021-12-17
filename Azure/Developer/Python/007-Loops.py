@@ -122,7 +122,7 @@ def factorial(n):
 
 print(factorial(5))
 
-#recursion with a while loop
+#recursion with a while loop - a function that calls itself until it reaches a base case and then returns the result to its caller
 def factorial2(n):
     result = 1
     while n > 1:
