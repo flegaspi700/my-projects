@@ -2,6 +2,7 @@ Azure/.env
 GCP/key.json
 global.json
 Azure/Data Science/.venv
+Azure/Developer/dotnet/projects
 
 .fake
 .ionide
