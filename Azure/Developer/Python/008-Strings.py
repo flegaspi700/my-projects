@@ -163,3 +163,29 @@ string.replace(old, new) Returns a new string where all occurrences of old have 
 delimiter.join(list of strings) Returns a new string with all the strings joined by the delimiter 
 https://docs.python.org/3/library/stdtypes.html#string-methods
 """
+
+#Number Arrays
+#Create a list of numbers from 0 to 100
+numbers = [2, 4, 6, 8, 10]
+target_number = 10
+target_num_found = False
+
+"""
+for first_number in numbers:
+    for second_number in numbers:
+        print(first_number, second_number)
+        if first_number + second_number == target_number:
+            target_num_found = True
+            print(f"{first_number} + {second_number} = {target_number}")
+"""
+
+def check_sum(numbers, target_number):
+    for first_number in numbers:
+        for second_number in numbers:
+            if first_number + second_number == target_number:
+                message = f"{first_number} + {second_number} = {target_number}"
+                return message
+    return False
+
+
+print(check_sum(numbers, target_number))

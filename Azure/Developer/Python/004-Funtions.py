@@ -40,7 +40,7 @@ def greeting3(name, department):
 result = greeting3("John", "IT")
 print(result)
 
-#Function taht convert miles to kilometers(1 mile = 1.60934 km)
+#Function that convert miles to kilometers(1 mile = 1.60934 km)
 def convert_miles_to_kilometers(miles):
     km = miles * 1.60934
     return km
