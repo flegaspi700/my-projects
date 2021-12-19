@@ -187,5 +187,9 @@ def check_sum(numbers, target_number):
                 return message
     return False
 
+#print(check_sum(numbers, target_number))
 
-print(check_sum(numbers, target_number))
+for i in range(len(numbers)):
+    for j in range(len(numbers)):
+       if numbers.index(numbers[i]) != numbers.index(numbers[j]):
+           print(f"{numbers[i]} + {numbers[j]}")        
