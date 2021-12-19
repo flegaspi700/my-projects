@@ -166,7 +166,7 @@ https://docs.python.org/3/library/stdtypes.html#string-methods
 
 #Number Arrays
 #Create a list of numbers from 0 to 100
-numbers = [2, 4, 6, 8, 10]
+numbers = [2, 4, 6, 8, 10, 2, 5]
 target_number = 10
 target_num_found = False
 
@@ -199,4 +199,8 @@ for i in range(len(numbers)):
 for number in numbers:
     print(number, numbers.index(number))
 
-print(numbers.index(11))
+if numbers.index(2):
+    print("Found")
+
+if numbers.count(2) > 0:
+    print(numbers.count(2))
