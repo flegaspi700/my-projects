@@ -1,40 +1,38 @@
 #Number Arrays
-#Create a list of numbers from 0 to 100
+#Problem statement: Sum of Two Numbers.
+#Given an array of integers and a value, 
+#determine if there are any two integers in the array whose sum is equal to the given value. 
+#Return true if the sum exists and return false if it does not.
 numbers = [2, 4, 6, 8, 10, 2, 5]
-target_number = 10
+target_number = 11
 target_num_found = False
 
-"""
-for first_number in numbers:
-    for second_number in numbers:
-        print(first_number, second_number)
-        if (first_number + second_number == target_number):
-                print(f"{first_number} + {second_number} = {target_number}")
-"""
-"""
-def check_sum(numbers, target_number):
-    for first_number in numbers:
-        for second_number in numbers:
-            if first_number + second_number == target_number:
-                message = f"{first_number} + {second_number} = {target_number}"
-                return message
-    return False
-"""
-#print(check_sum(numbers, target_number))
-
+#This is using a for loop to iterate through the list. This will work but will be inefficient.
 for i in range(len(numbers)):
     for j in range(len(numbers)):
        if (numbers.index(numbers[i]) != numbers.index(numbers[j])) and (numbers[i] + numbers[j] == target_number):
-           print(f"{numbers[i]} + {numbers[j]}") 
+           print(f"{numbers[i]} + {numbers[j]}")
 
-for i in range(len(numbers)):
-    print(i)
+def sum_of_two_numbers(numbers, target_number):
+    #This is using a for loop to iterate through the list. This will work but will be inefficient.
+    for i in range(len(numbers)):
+        for j in range(len(numbers)):
+           if (numbers.index(numbers[i]) != numbers.index(numbers[j])) and (numbers[i] + numbers[j] == target_number):
+               print(f"{numbers[i]} + {numbers[j]}")
+               target_num_found = True
+    if target_num_found == False:
+        print("No numbers found")
 
-for number in numbers:
-    print(number, numbers.index(number))
+sum_of_two_numbers(numbers, target_number)
 
-if numbers.count(2) > 0:
-    print(numbers.count(2))
+#for i in range(len(numbers)):
+#    print(i, "print i")
 
-if 2 in numbers:
-    print("Found 2")
+#for number in numbers:
+#    print(number, numbers.index(number))
+
+#if numbers.count(2) > 0:
+#    print(numbers.count(2), "Here")
+
+#if 2 in numbers:
+#    print("Found 2")

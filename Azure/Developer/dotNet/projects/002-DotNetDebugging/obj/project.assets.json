@@ -1348,31 +1348,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\flega\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\cttin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\002-DotNetDebugging.csproj",
+      "projectUniqueName": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\002-DotNetDebugging.csproj",
       "projectName": "002-DotNetDebugging",
-      "projectPath": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\002-DotNetDebugging.csproj",
-      "packagesPath": "C:\\Users\\flega\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\flega\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\obj\\",
+      "projectPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\002-DotNetDebugging.csproj",
+      "packagesPath": "C:\\Users\\cttin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\cttin\\OneDrive\\Documents\\Portfolio\\my-projects\\Azure\\Developer\\dotNet\\projects\\002-DotNetDebugging\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\flega\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\cttin\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
