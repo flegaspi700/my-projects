@@ -57,3 +57,22 @@ print(sum_two(numbers, target_number))
 
 #if 2 in numbers:
 #    print("Found 2")
+#set() is a data structure that is used to store unique values of any data type.
+#set() is a collection which is unordered and unindexed.
+#set() is an unordered collection of unique elements.
+def find_sum_of_two(A, val):
+  found_values = []
+  for a in A:
+    if val - a in found_values:
+      return True
+
+    found_values.append(a)
+    
+  return False
+
+v = [5, 7, 1, 2, 8, 4, 3]
+test = [3, 20, 1, 2, 7]
+
+for i in range(len(test)):
+  output = find_sum_of_two(v, test[i])
+  print("find_sum_of_two(v, " + str(test[i]) + ") = " + str(output))
