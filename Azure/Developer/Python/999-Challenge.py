@@ -61,12 +61,12 @@ print(sum_two(numbers, target_number))
 #set() is a collection which is unordered and unindexed.
 #set() is an unordered collection of unique elements.
 def find_sum_of_two(A, val):
-  found_values = []
+  found_values = set()
   for a in A:
     if val - a in found_values:
       return True
 
-    found_values.append(a)
+    found_values.add(a)
     
   return False
 
