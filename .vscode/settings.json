@@ -1,5 +1,11 @@
 {
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "markdownlint.config": {
+        "MD028": false,
+        "MD025": {
+            "front_matter_title": ""
+        }
+    }
     //"python.pythonPath": "C:\\Users\\cttin\\AppData\\Local\\Programs\\Python\\Python39\\python.exe",
    //"jupyter.jupyterServerType": "local"
 }

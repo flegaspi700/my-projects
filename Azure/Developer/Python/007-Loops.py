@@ -14,14 +14,14 @@ while x <5:
     x += 1
 print("The loop has ended")
 
-def attemps(tries):
+def attempts(tries):
     x = 1
     while x <= tries:
         print("Attempt #", x)
         x += 1
     print("You have run out of attempts")
 
-attemps(10)
+attempts(10)
 
 
 #for loops
