@@ -91,6 +91,44 @@ for key, value in wardrobe.items():
 	for item in value:
 		print("{} {}".format(item, key))
 
+#Exercise
+def email_list(domains):
+    email_list = []
+    for key, value in domains.items():
+        for names in value:
+            email_list.append(names + "@" + key)
+    return email_list
+
+print(email_list({"gmail.com": ["clark.kent", "diana.prince", "peter.parker"], "yahoo.com": ["barbara.gordon", "jean.grey"], "hotmail.com": ["bruce.wayne"]}))
+
+#Exercise
+def groups_per_user(group_dictionary):
+    user_groups = {}
+    for key, value in group_dictionary.items():
+        for name in value:
+            if name not in user_groups:
+                #Create a new key for the user in the dictionary with an empty list as the value.
+                user_groups[name] = []
+            user_groups[name].append(key)
+    return user_groups
+
+print(groups_per_user({"local": ["admin", "userA"],
+		"public":  ["admin", "userB"],
+		"administrator": ["admin"] }))
+
+#exercise
+def add_prices(groceries):
+    total = 0
+    for item, price in groceries.items():
+        total += price
+    return total
+    
+groceries = {"bananas": 1.56, "apples": 2.50, "oranges": 0.99, "bread": 4.59, 
+	"coffee": 6.99, "milk": 3.39, "eggs": 2.98, "cheese": 5.44}
+
+print(add_prices(groceries)) # Should print 28.44
+
+
 #dict.update(other_dictionary) - Updates the dictionary with the items coming from the other dictionary. Existing entries will be replaced; new entries will be added.
 #dict.clear() - Removes all the items of the dictionary
 #dict.copy() - Returns a shallow copy of the dictionary
