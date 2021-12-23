@@ -47,10 +47,14 @@ target_number = 0
 
 def sum_two(numbers,target_number):
     find_num = 0
+    found_values = set()
     for num in numbers:
         find_num = target_number - num
-        if (find_num in numbers) and (numbers.index(find_num) != numbers.index(num)):
+        #if (find_num in numbers) and (numbers.index(find_num) != numbers.index(num)):
+        if find_num in found_values:
             return True
+            
+        found_values.add(num)
     return False
 
 print(sum_two(numbers, target_number))
