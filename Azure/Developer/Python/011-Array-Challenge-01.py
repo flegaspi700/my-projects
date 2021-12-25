@@ -80,3 +80,10 @@ test = [3, 20, 1, 2, 7]
 for i in range(len(test)):
   output = find_sum_of_two(v, test[i])
   print("find_sum_of_two(v, " + str(test[i]) + ") = " + str(output))
+
+#Questions:
+#What do we expect to return? 
+#Does the array sorted? 
+#Does the array contain negative numbers?
+#can we add the same number twice? 
+#Is the input array as well? or single value?
