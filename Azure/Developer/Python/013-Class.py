@@ -104,20 +104,30 @@ fido = Dog()
 fido.years = 5
 print(fido.dog_years())
 
-#Constructors
+#Constructors with Doc Strings
 class Dog:
+    """A simple attempt to model a dog."""
     def __init__(self, name, age):
         self.name = name
         self.age = age
     
+    """Returns a string representation of the object."""
     def speak(self):
         return (f"Woof Woof {self.name}")
 
+    """Returns the age of the dog."""
+    def __len__(self):
+        return self.age
+
+    """Returns the name of the dog."""
     def __str__(self):
         return (f"{self.name} is {self.age} years old.")
-        
-winter = Dog("Winter", 5)
+
+winter = Dog("Winter", 7)
 print(winter.name)
 print(winter.age)
 print(winter.speak())
 print(winter)
+print(len(winter))
+help(Dog)
+help(winter)
