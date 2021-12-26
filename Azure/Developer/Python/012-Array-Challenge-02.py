@@ -11,8 +11,8 @@
 
 array = [[1, 0, 3], 
          [4, 5, 6], 
-         [0, 8, 0],
-         [10, 11, 12, 16],
+         [0, 8, 9],
+         [10, 11, 12],
          [13, 14, 15]]
 
 #print the array
@@ -53,3 +53,15 @@ for i in range(len(array)):
 
 print("rows", row_with_zero)
 print("cols", col_with_zero)
+
+#Update the array to zero
+for i in range(len(array)):
+    for j in range(len(array[i])):
+        if i in row_with_zero or j in col_with_zero:
+            array[i][j] = 0
+
+print("Updated array")
+for row in array:
+    for num in row:
+        print(num, end=" ")
+    print()
