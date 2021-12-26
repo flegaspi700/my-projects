@@ -65,3 +65,13 @@ for row in array:
     for num in row:
         print(num, end=" ")
     print()
+
+#Generate a random two dimensional array
+import random
+
+ran_array = []
+
+
+
+
+
