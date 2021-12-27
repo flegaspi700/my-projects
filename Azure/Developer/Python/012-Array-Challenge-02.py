@@ -66,10 +66,21 @@ for row in array:
         print(num, end=" ")
     print()
 
-#Generate a random two dimensional array
+#Generate a array of random numbers
 import random
+array = [[random.randint(0, 10) for i in range(3)] for j in range(3)]
 
-ran_array = []
+array2 = []
+for outer in range(3):
+    array2.append([])
+    for inner in range(3):
+        array2[outer].append(random.randint(0, 10))
+        
+
+print(array)
+print(array2)
+
+
 
 
 
