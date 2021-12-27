@@ -69,18 +69,72 @@ for row in array:
 #Generate a array of random numbers
 import random
 array = [[random.randint(0, 10) for i in range(3)] for j in range(3)]
+print(array)
 
 array2 = []
 for outer in range(3):
     array2.append([])
     for inner in range(3):
         array2[outer].append(random.randint(0, 10))
-        
 
-print(array)
-print(array2)
+###############################################################################
+def create_random_array(rows, cols):
+    import random
+    array = []
+    
+    for outer in range(rows):
+        array.append([])
+        for inner in range(cols):
+            array[outer].append(random.randint(0, 9))
+    
+    return array
 
+def print_array(array):
+    for row in array:
+        for num in row:
+            print(num, end=" ")
+        print()
 
+def check_for_zero(array):
+    #Check if an array has a zero value
+    row_with_zero = set()
+    col_with_zero = set()
+    
+    for i in range(len(array)):
+        for j in range(len(array[i])):
+            if array[i][j] == 0:
+                print(f"found {array[i][j]} in index {i}:{j}", end="\n")
+                row_with_zero.add(i)
+                col_with_zero.add(j)
+    
+    return row_with_zero, col_with_zero
+
+def update_array(array, row_zero, col_zero):
+    for i in range(len(array)):
+        for j in range(len(array[i])):
+            if i in row_zero or j in col_zero:
+                array[i][j] = 0
+
+    return array
+
+def main():    
+    print("Main execution")
+    main_array = create_random_array(5, 5)
+
+    print("Main array")
+    print_array(main_array)
+
+    print("Checking for zero")
+    row_zero, col_zero = check_for_zero(main_array)
+    print("rows", row_zero)
+    print("cols", col_zero)
+
+    print("Updating array")
+    updated_array = update_array(main_array, row_zero, col_zero)
+    print("Updated array")
+    print_array(updated_array)
+
+main ()
 
 
 
