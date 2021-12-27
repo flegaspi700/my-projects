@@ -42,8 +42,8 @@ for t_num in target_number:
 #if numbers.count(2) > 0:
 #    print(numbers.count(2), "Here")
 
-numbers = [2, 4, -2, 8, 10, 7, 5]
-target_number = 0
+numbers = [2, 4, -2, 0, 10, 7, 5]
+target_number = 2
 
 def sum_two(numbers,target_number):
     find_num = 0
