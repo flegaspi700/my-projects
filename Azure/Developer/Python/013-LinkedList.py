@@ -145,5 +145,3 @@ node4.next = node5
 print(head.countNodes())
 head.printNodes()
 head.printNodesReverse()
-
-
