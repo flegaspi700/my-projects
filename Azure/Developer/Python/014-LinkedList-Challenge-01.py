@@ -9,17 +9,17 @@ class create_linked_list:
     def __init__(self):
         self.head = None
 
-    def insert_node(self, data):
-        new_node = Node(data)
+    def insert_nodes(self, data):
+        for item in data:
+            new_node = Node(item)
 
-        if self.head == None:
-            self.head = new_node
-            return
-
-        current = self.head
-        while current.next != None:
-            current = current.next
-        current.next = new_node
+            if self.head == None:
+                self.head = new_node
+            else:
+                current = self.head
+                while current.next != None:
+                    current = current.next
+                current.next = new_node
     
     def nodecount(self):
         current = self.head
@@ -35,9 +35,21 @@ class create_linked_list:
             print(current.data)
             current = current.next  
 
-my_list = create_linked_list()
-my_list.insert_node([1, 2, 3, 4, 5])
+first_list = create_linked_list()
+first_list.insert_nodes([1, 2, 3, 4, 5])
 
+print("Number of Nodes:", first_list.nodecount())
+print("Printing List:")
+first_list.print_list()
+print("end of list")
 
-print(my_list.nodecount())
-my_list.print_list()
+second_list = create_linked_list()
+second_list.insert_nodes([1, 1, 1, 1, 1])
+
+print("Number of Nodes:", second_list.nodecount())
+print("Printing List:")
+second_list.print_list()
+print("end of list")
+
+print("Print")
+print(first_list.head.data)
