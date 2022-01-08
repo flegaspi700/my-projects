@@ -40,16 +40,25 @@ def add_node(first_list, second_list):
 
     first_current = first_list.head
     second_current = second_list.head
-
-    while first_current != None or second_current != None:
+          
+    while first_current != None and second_current != None:
         sum_nodes.append(first_current.data + second_current.data)
         first_current = first_current.next
         second_current = second_current.next
 
+    if first_current == None:
+        while second_current != None:
+            sum_nodes.append(second_current.data)
+            second_current = second_current.next
+    else:
+        while first_current != None:
+            sum_nodes.append(first_current.data)
+            first_current = first_current.next
+
     return sum_nodes
 
 first_list = create_linked_list()
-first_list.insert_nodes([1, 2, 3, 4, 5])
+first_list.insert_nodes([1, 2, 3, 4])
 
 print("Number of Nodes:", first_list.nodecount())
 print("Printing List:")
