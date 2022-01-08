@@ -35,6 +35,19 @@ class create_linked_list:
             print(current.data)
             current = current.next  
 
+def add_node(first_list, second_list):
+    sum_nodes = []
+
+    first_current = first_list.head
+    second_current = second_list.head
+
+    while first_current != None or second_current != None:
+        sum_nodes.append(first_current.data + second_current.data)
+        first_current = first_current.next
+        second_current = second_current.next
+
+    return sum_nodes
+
 first_list = create_linked_list()
 first_list.insert_nodes([1, 2, 3, 4, 5])
 
@@ -51,7 +64,10 @@ print("Printing List:")
 second_list.print_list()
 print("end of list")
 
-print("Print")
-print(first_list.head.data)
+print("Final List:")
+final_list = add_node(first_list, second_list)
+sum_final_list = create_linked_list()
+sum_final_list.insert_nodes(final_list)
+sum_final_list.print_list()
 
 
