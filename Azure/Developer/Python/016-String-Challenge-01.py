@@ -25,3 +25,4 @@ for i in range(len(string4)):
     for j in range(len(string4)+1):
         if (len(string4[i:j]) > 1) and (string4[i:j] == string4[i:j][::-1]):
             print(string4[i:j], end="\n")
+
