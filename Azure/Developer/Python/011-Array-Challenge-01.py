@@ -34,7 +34,7 @@ for t_num in target_number:
 #    print(count, number)
 
 #for i in range(len(numbers)):
-#    print(i, "print i")
+#    print(i, "print i") 
 
 #for number in numbers:
 #    print(number, numbers.index(number))
